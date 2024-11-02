@@ -30,4 +30,5 @@ The app currently fetches data from these Spotify playlists:
    - Rock Classics
    - Jazz Classics
    - Indie Pop
+
 Feel free to add more playlists in data_fetcher.py for increased diversity.
