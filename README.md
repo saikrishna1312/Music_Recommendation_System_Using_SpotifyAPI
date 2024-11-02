@@ -1,6 +1,7 @@
 # Hybrid Music Recommendation System 🎶
 
 This project is a **Hybrid Music Recommendation System** that uses **Spotify API** to fetch song data and audio features from various popular playlists. 
+
 **Content-Based Filtering**: Recommends songs with similar audio features (e.g., danceability, energy, tempo) by calculating cosine similarity between tracks in the database.
 
 **Collaborative Filtering**: Due to the absence of explicit user ratings or historical listening data, collaborative filtering is implemented using a similarity matrix based on shared playlists, simulating song co-occurrences. While this method approximates collaborative filtering, it has limitations:
