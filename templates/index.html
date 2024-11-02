@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Music Recommender</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Music Recommender System</h1>
+        <form action="/recommend" method="post" class="song-form">
+            <label for="song_name">Enter a Song Name:</label>
+            <input type="text" id="song_name" name="song_name" placeholder="E.g., Song A" required>
+            <button type="submit">Get Recommendations</button>
+        </form>
+
+        {% if recommendations %}
+            <h2>Top Recommendations for "{{ song_name }}":</h2>
+            <ul class="recommendation-list">
+                {% for recommendation in recommendations %}
+                    <li>
+                        <div class="recommendation">
+                            <span class="song-title">{{ recommendation['name'] }}</span>
+                            <span class="artist">by {{ recommendation['artist'] }}</span>
+                            <span class="score">Score: {{ recommendation['hybrid_score'] | round(2) }}</span>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
