@@ -1,22 +1,13 @@
 # Hybrid Music Recommendation System 🎶
 
-This project is a **Hybrid Music Recommendation System** that uses **Spotify API** to fetch song data and audio features from various popular playlists. It combines **content-based** and **collaborative filtering** techniques to provide personalized song recommendations based on track features like danceability, energy, tempo, and loudness. The data is stored in an **SQLite** database, and daily updates are scheduled with **APScheduler** to keep the database current.
+This project is a **Hybrid Music Recommendation System** that uses **Spotify API** to fetch song data and audio features from various popular playlists. 
+**Content-Based Filtering**: Recommends songs with similar audio features (e.g., danceability, energy, tempo) by calculating cosine similarity between tracks in the database.
 
-## Features
+**Collaborative Filtering**: Due to the absence of explicit user ratings or historical listening data, collaborative filtering is implemented using a similarity matrix based on shared playlists, simulating song co-occurrences. While this method approximates collaborative filtering, it has limitations:
+   - **No User-Specific History**: Recommendations are based on general song similarities rather than individualized preferences, making them less personalized than traditional collaborative filtering.
+   - **Playlist-Based Data**: The system relies on song co-occurrences in playlists rather than actual user interactions, so recommendations may be limited by playlist diversity.
 
-- **Hybrid Recommendation System**: Combines content-based and collaborative filtering for more accurate and diverse recommendations.
-- **Automated Data Fetching**: Pulls song data daily from multiple Spotify playlists, ensuring a dynamic and up-to-date recommendation pool.
-- **Data Storage**: Uses SQLite for efficient storage and retrieval of song data, with support for automatic deduplication.
-- **Scalable and Modifiable**: Designed to be extended with more playlists, additional audio features, and different recommendation weights.
-
-## How It Works
-
-1. **Data Fetching**: The app fetches tracks from a variety of Spotify playlists (e.g., "Today's Top Hits", "Mood Booster", "Chill Hits") using Spotify’s API.
-2. **Feature Extraction**: For each song, it extracts audio features like danceability, energy, tempo, and loudness.
-3. **Hybrid Recommendation**:
-   - **Content-Based Filtering**: Recommends songs with similar audio features.
-   - **Collaborative Filtering**: Uses a precomputed similarity matrix to recommend songs that frequently appear together in playlists.
-4. **Automated Updates**: APScheduler is used to update the database daily, keeping recommendations fresh.
+Despite these limitations, the hybrid approach effectively combines content and collaborative similarities to deliver diverse and relevant song recommendations.
 
 
 ## Example Playlists
