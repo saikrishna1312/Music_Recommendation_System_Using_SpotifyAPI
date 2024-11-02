@@ -21,13 +21,13 @@ This project is a **Hybrid Music Recommendation System** that uses **Spotify API
 
 ## Example Playlists
 The app currently fetches data from these Spotify playlists:
-- Today's Top Hits
-- Mood Booster
-- Chill Hits
-- RapCaviar
-- New Music Friday
-- Hot Country
-- Rock Classics
-- Jazz Classics
-- Indie Pop
+   - Today's Top Hits
+   - Mood Booster
+   - Chill Hits
+   - RapCaviar
+   - New Music Friday
+   - Hot Country
+   - Rock Classics
+   - Jazz Classics
+   - Indie Pop
 Feel free to add more playlists in data_fetcher.py for increased diversity.
